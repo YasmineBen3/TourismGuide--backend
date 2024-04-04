@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hosts', function (Blueprint $table) {
+        Schema::create('location', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['client', 'host'])->default('host');
-            $table->integer('telephone');
-            $table->string('address');
             $table->timestamps();
 
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hosts');
+        Schema::dropIfExists('location');
     }
 };

@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hosts', function (Blueprint $table) {
+        Schema::create('personnel', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['client', 'host'])->default('host');
+            $table->sting('first_name');
+            $table->sting('last_name');
+            $table->sting('role');
             $table->integer('telephone');
-            $table->string('address');
             $table->timestamps();
 
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('tour_id');
+            $table->foreign('tour_id')->references('id')->on('tours');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hosts');
+        Schema::dropIfExists('personnel');
     }
 };

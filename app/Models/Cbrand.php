@@ -13,8 +13,8 @@ class Cbrand extends Model
         'brand_name', 'brand_model',
     ];
 
-    public function car()
+    public function cars()
     {
-        return $this->hasOne(Car::class);
+        return $this->hasMany(Car::class);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 use App\Models\Payment;
-use App\Models\Personnel;
+use App\Models\Reservation;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +14,11 @@ class Facture extends Model
         'total',
     ];
 
-    public function payments()
+    public function payment()
     {
-        return $this->hasMany(Payment::class);
+        return $this->hasOne(Payment::class);
     }
-    public function personnel(){
-        return $this->belongsTo(Personnel::class);
+    public function reservation(){
+        return $this->belongsTo(Reservation::class);
     }
 }

@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('restaurant_name');
             $table->string('restaurant_description');
+            $table->integer('nbr_places');
             $table->timestamps();
 
-            $table->unsignedBigInteger('offer_id');
-            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->unsignedBigInteger('cuisine_id');
+            $table->foreign('cuisine_id')->references('id')->on('cuisines');
+
         });
     }
 

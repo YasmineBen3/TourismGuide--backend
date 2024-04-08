@@ -20,9 +20,6 @@ return new class extends Migration
             //npt = number of people per tour
             $table->number('npt');
             $table->timestamps();
-
-            $table->unsignedBigInteger('offer_id');
-            $table->foreign('offer_id')->references('id')->on('offers');
         });
     }
 

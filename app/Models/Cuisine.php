@@ -1,18 +1,16 @@
 <?php
 
 namespace App\Models;
+use App\Models\Restaurant;
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class Cuisine extends Model
 {
     use HasFactory;
-    protected $fillable = [
-
-    ];
-    public function locatable(){
-        return $this->morphTo();
+    public function restaurants(){
+        return $this->hasMany(Restaurant::class);
     }
-    
 }

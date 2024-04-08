@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('location', function (Blueprint $table) {
             $table->id();
+            $table->string('city');
+            $table->decimal('latitude',  );
+            $table->decimal('longitude', );
             $table->timestamps();
-
-            $table->unsignedBigInteger('city_id');
-            $table->foreign('city_id')->references('id')->on('cities');
-            $table->unsignedBigInteger('country_id');
-            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 

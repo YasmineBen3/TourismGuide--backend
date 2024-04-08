@@ -17,11 +17,7 @@ return new class extends Migration
             $table->string('activity_description');
             $table->timestamps();
 
-            $table->unsignedBigInteger('tour_id');
-            $table->foreign('tour_id')->references('id')->on('tours');
-
-            $table->unsignedBigInteger('steps_id');
-            $table->foreign('steps_id')->references('id')->on('steps');
+            
 
         });
     }

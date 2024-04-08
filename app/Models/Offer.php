@@ -22,4 +22,10 @@ class Offer extends Model
     {
         return $this->belongsToMany(Client::class, 'reservations');
     }
+    public function reservations(){
+        return $this->hasMany(Reservation::class);
+    }
+    public function offerable(){
+        return $this->morphTo();
+    }
 }

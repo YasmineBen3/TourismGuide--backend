@@ -19,8 +19,7 @@ class Car extends Model
         return $this->belongsTo(Cbrand::class);
     }
 
-    public function offer()
-    {
-        return $this->hasOne(Offer::class);
+    public function offer(){
+        return $this->morphOne(Offer::class, 'offerable');
     }
 }

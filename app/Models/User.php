@@ -21,7 +21,7 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'username',
-        'birthdate',
+        'birth_date',
         'email',
         'type',
         'password',
@@ -68,5 +68,5 @@ class User extends Authenticatable
     {
         return $this->hasOne(Host::class);
     }
-
+    
 }

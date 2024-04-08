@@ -17,6 +17,11 @@ return new class extends Migration
             $table->date('end_date');
             $table->date('reservation_date');
             $table->timestamps();
+
+            $table->UnsignedBigInteger('offer_id');
+            $table->foreign('offer_id')->references('id')->on('offers');
+            $table->UnsignedBigInteger('client_id');
+            $table->foreign('client_id')->references('id')->on('clients');
         });
     }
 

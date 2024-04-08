@@ -16,11 +16,13 @@ return new class extends Migration
             $table->timestamps();
             $table->string('accommodation_name');
             $table->string('accommodation_description');
+            $table->integer('nbr_places');
             $table->string('price_day');
 
+            $table->unsignedBigInteger('accommodation_type_id');
+            $table->foreign('accommodation_type_id')->references('id')->on('accommodations');
 
-            $table->unsignedBigInteger('offer_id');
-            $table->foreign('offer_id')->references('id')->on('offers');
+
         });
     }
 

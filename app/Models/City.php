@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-use App\Models\Location;
+use App\Models\Tour;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,9 +12,8 @@ class City extends Model
     protected $fillable=[
         'city_name'
     ];
-
-    public function locations(){
-        return $this->hasMany(Location::class);
+    public function tours(){
+        return $this->belongsTo(Tour::class);
     }
 
 }

@@ -18,6 +18,10 @@ return new class extends Migration
 
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')->references('id')->on('countries');
+
+            $table->unsignedBigInteger('tour_id');
+            $table->foreign('tour_id')->references('id')->on('tours');
+
         });
     }
 

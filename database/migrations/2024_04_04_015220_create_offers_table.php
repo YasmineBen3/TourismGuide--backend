@@ -17,8 +17,8 @@ return new class extends Migration
             $table->boolean('is_available')->default(true);
             $table->timestamps();
 
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->unsignedBigInteger('host_id');
+            $table->foreign('host_id')->references('id')->on('hosts');
         });
     }
 

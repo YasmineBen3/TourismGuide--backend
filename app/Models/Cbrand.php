@@ -9,9 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Cbrand extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'brand_name', 'brand_model',
-    ];
 
     public function cars()
     {

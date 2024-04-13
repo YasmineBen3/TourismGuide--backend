@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('cbrands', function (Blueprint $table) {
             $table->id();
-            $table->string('brand_name');
-            $table->string('brand_model');
+            $table->enum('brands',['']);
             $table->timestamps();
+
+            $table->unsignedBigInteger('car_id');
+            $table->foreign('car_id')->references('id')->on('cars');
         });
     }
 

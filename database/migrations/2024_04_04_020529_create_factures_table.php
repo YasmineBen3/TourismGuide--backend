@@ -16,8 +16,8 @@ return new class extends Migration
             $table->decimal('total');
             $table->timestamps();
 
-            $table->UnsignedBigInteger('reservation_id');
-            $table->foreign('reservation_id')->references('id')->on('reservations');
+            $table->unsignedBigInteger('host_id');
+            $table->foreign('host_id')->references('id')->on('hosts');
 
             
         });

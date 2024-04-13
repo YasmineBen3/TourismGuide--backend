@@ -14,10 +14,16 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->decimal('price_day');
+            $table->date('year_production');
+            $table->enum('fuel',['Diesel', 'Gasoline', 'Gas', 'Electricity']);
+            $table->integer('nbr_places');
+            $table->string('description');
             $table->timestamps();
 
-            $table->unsignedBigInteger('cbrand_id');
-            $table->foreign('cbrand_id')->references('id')->on('cbrand');
+            $table->unsignedBigInteger('model_id');
+            $table->foreign('model_id')->references('id')->on('models');
+            $table->unsignedBigInteger('offer_id');
+            $table->foreign('offer_id')->references('id')->on('offers');
         });
     }
 

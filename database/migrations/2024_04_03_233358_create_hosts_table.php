@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('hosts', function (Blueprint $table) {
             $table->id();
-            $table->integer('telephone');
-            $table->string('address');
             $table->timestamps();
 
 

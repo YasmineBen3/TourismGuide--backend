@@ -15,17 +15,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tour extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'tour_name',
-        'tour_description',
-        'tour_date',
-        'tour_price',
-        'npt', 
-        'offer_id'
 
-    ];
     public function offer(){
-        return $this->morphOne(Offer::class, 'offerable');
+        return $this->hasOne(Offer::class);
     }
     public function activities(){
         return $this->belongsToMany(Activity::class);

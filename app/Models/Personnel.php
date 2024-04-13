@@ -10,12 +10,6 @@ class Personnel extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'role',
-        'telephone'
-    ];
 
     public function tour()
     {

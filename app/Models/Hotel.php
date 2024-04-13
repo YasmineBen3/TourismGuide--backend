@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Models;
-use App\Models\Tour;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Hotel extends Model
 {
     use HasFactory;
-    public function tours(){
-        return $this->belongsTo(Tour::class);
+    public function offer(){
+        return $this->hasOne(Offer::class);
     }
-
 }

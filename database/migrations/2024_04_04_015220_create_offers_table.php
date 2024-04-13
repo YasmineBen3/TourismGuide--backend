@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
+            $table->string('description');
             $table->enum('type', ['reservation', 'tour', 'car', 'restaurant']);
-            $table->boolean('is_available')->default(true);
             $table->timestamps();
 
             $table->unsignedBigInteger('host_id');

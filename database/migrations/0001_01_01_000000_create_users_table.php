@@ -15,10 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('CIN');
+            $table->string('address');
+            $table->integer('telephone');
+            $table->enum('city', ['Tangier', 'Fes', 'Rabat', 'Casablanca']);
+            $table->enum('country', ['Morocco']);
             $table->string('username')->unique();
             $table->date('birth_date');
             $table->string('email')->unique();
-            $table->enum('type', ['client', 'host'])->default('client');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

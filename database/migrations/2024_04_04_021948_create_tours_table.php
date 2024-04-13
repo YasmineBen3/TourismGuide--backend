@@ -15,11 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('tour_name');
             $table->string('tour_description');
-            $table->date('tour_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->decimal('tour_price');
             //npt = number of people per tour
             $table->number('npt');
             $table->timestamps();
+
+            $table->unsignedBigInteger('offer_id');
+            $table->foreign('offer_id')->references('id')->on('offers');
         });
     }
 

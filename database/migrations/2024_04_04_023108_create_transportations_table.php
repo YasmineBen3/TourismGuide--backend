@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('transportations', function (Blueprint $table) {
             $table->id();
+            $table->integer('registration_number');
             $table->enum('type', ['bus', 'car', 'safari vehicale', 'van']);
-            $table->number('max_places');
+            $table->number('nbr_places');
             $table->timestamps();
 
             $table->unsignedBigInteger('tour_id');

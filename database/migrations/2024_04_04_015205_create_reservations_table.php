@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->date('reservation_date');
+            $table->integer('nbr_people');
             $table->timestamps();
 
             $table->UnsignedBigInteger('offer_id');

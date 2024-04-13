@@ -11,22 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurants', function (Blueprint $table) {
+        Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('restaurant_name');
-            $table->string('restaurant_description');
-            $table->integer('nbr_places');
+            $table->string('name');
+            $table->string('address');
+            $table->string('description');
+            $table->integer('nbr_stars');
+            $table->enum('type',['appartement',]);
             $table->decimal('latitude', 10, 7); 
             $table->decimal('longitude', 10, 7);
-            $table->timestamps();
 
-            
-            $table->unsignedBigInteger('offer_id');
-            $table->foreign('offer_id')->references('id')->on('offers');
-            $table->unsignedBigInteger('cuisine_id');
-            $table->foreign('cuisine_id')->references('id')->on('cuisines');
+            $table->check('nbr_stars >= 1 and nbr_stars <= 5');
+
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
+            $table->unsignedBigInteger('offer_id');
+            $table->foreign('offer_id')->references('id')->on('offers');
+
+            $table->timestamps();
         });
     }
 
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('restaurants');
+        Schema::dropIfExists('hotels');
     }
 };

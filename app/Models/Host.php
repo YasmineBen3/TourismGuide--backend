@@ -12,19 +12,6 @@ class Host extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'username',
-        'birthdate',
-        'email',
-        'telephone',
-        'address',
-        'type',
-        'password',
-        'user_id',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

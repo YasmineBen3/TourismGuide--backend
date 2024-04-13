@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('activity_tour', function (Blueprint $table) {
             $table->id();
-            $table->integer('step');
+            $table->integer('order');
             $table->timestamps();
 
             $table->unsignedBigInteger('activty_id');

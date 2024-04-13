@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('cmodels', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['PayPal', 'Apple Pay', 'MasterCard', 'Google Pay', 'Visa Card']);
+            $table->enum('models',['']);
             $table->timestamps();
-
-            $table->unsignedBigInteger('facture_id');
-            $table->foreign('facture_id')->references('id')->on('factures');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('cmodels');
     }
 };
